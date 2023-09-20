@@ -178,6 +178,7 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
         options.put(CHANNEL_ID, DEFAULT_CHANNEL_ID);
         String appName = this.getAppName();
         options.putOpt(CHANNEL_DESCRIPTION, appName);
+        options.putOpt(CHANNEL_IMPORTANCE, NotificationManager.IMPORTANCE_HIGH);
         createChannel(options);
       } catch (JSONException e) {
         Log.e(LOG_TAG, "execute: Got JSON Exception " + e.getMessage());
